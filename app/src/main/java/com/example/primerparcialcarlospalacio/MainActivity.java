@@ -2,7 +2,6 @@ package com.example.primerparcialcarlospalacio;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -17,13 +16,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Declaración de variables de la UI [cite: 11, 12, 13, 14, 15]
     EditText n1, n2;
     Button btnPotencia, btnModulo, btnMaximo, btnLimpiar, btnVerDetalle;
     TextView tvResultado;
     ImageView ivOperacion;
 
-    // Variables para almacenar datos y enviarlos después [cite: 25, 26, 27]
     String operacionSeleccionada = "";
     double valorA = 0, valorB = 0, resultadoCalculado = 0;
 
@@ -33,14 +30,12 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Ajuste de insets (copiado de tu referencia)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // 1. Enlazar componentes [cite: 12, 13, 14, 15]
         n1 = findViewById(R.id.txt1);
         n2 = findViewById(R.id.txt2);
         btnPotencia = findViewById(R.id.btnpotencia);
@@ -51,18 +46,10 @@ public class MainActivity extends AppCompatActivity {
         tvResultado = findViewById(R.id.tvresultado);
         ivOperacion = findViewById(R.id.ivoperacion);
 
-        // 2. Lógica de los botones
 
-        // POTENCIA [cite: 16, 20]
         btnPotencia.setOnClickListener(v -> calcular("POTENCIA"));
-
-        // MÓDULO [cite: 17, 21]
         btnModulo.setOnClickListener(v -> calcular("MODULO"));
-
-        // MÁXIMO [cite: 18, 22]
         btnMaximo.setOnClickListener(v -> calcular("MAXIMO"));
-
-        // LIMPIAR [cite: 23]
         btnLimpiar.setOnClickListener(v -> {
             n1.setText("");
             n2.setText("");
@@ -71,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
             operacionSeleccionada = "";
         });
 
-        // VER DETALLE (Intent Explícito) [cite: 24, 25, 26, 27]
         btnVerDetalle.setOnClickListener(v -> {
             if (!operacionSeleccionada.isEmpty()) {
                 Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
@@ -86,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Método auxiliar para centralizar los cálculos y validaciones [cite: 6]
     private void calcular(String tipo) {
         try {
             valorA = Double.parseDouble(n1.getText().toString());
