@@ -13,10 +13,10 @@ public class DetalleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalle);
 
-        String op = getIntent().getStringExtra("OPERACION"); // [cite: 25]
-        double a = getIntent().getDoubleExtra("A", 0.0); // [cite: 26]
-        double b = getIntent().getDoubleExtra("B", 0.0); // [cite: 26]
-        double res = getIntent().getDoubleExtra("RESULTADO", 0.0); // [cite: 27]
+        String op = getIntent().getStringExtra("OPERACION");
+        double a = getIntent().getDoubleExtra("A", 0.0);
+        double b = getIntent().getDoubleExtra("B", 0.0);
+        double res = getIntent().getDoubleExtra("RESULTADO", 0.0);
 
         TextView tvOp = findViewById(R.id.tvDetalleOperacion);
         TextView tvA = findViewById(R.id.tvValorA);

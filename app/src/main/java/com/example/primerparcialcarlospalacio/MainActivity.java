@@ -80,24 +80,24 @@ public class MainActivity extends AppCompatActivity {
 
             switch (tipo) {
                 case "POTENCIA":
-                    resultadoCalculado = Math.pow(valorA, valorB); // [cite: 20]
-                    ivOperacion.setImageResource(R.drawable.rayo); // [cite: 16]
+                    resultadoCalculado = Math.pow(valorA, valorB);
+                    ivOperacion.setImageResource(R.drawable.rayo);
                     break;
                 case "MODULO":
                     if (valorB != 0) { // Validación B != 0
                         resultadoCalculado = valorA % valorB;
-                        ivOperacion.setImageResource(R.drawable.porcentaje); // [cite: 17]
+                        ivOperacion.setImageResource(R.drawable.porcentaje);
                     } else {
                         Toast.makeText(this, "B no puede ser cero", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     break;
                 case "MAXIMO":
-                    resultadoCalculado = Math.max(valorA, valorB); // [cite: 22]
-                    ivOperacion.setImageResource(R.drawable.max); // [cite: 18]
+                    resultadoCalculado = Math.max(valorA, valorB);
+                    ivOperacion.setImageResource(R.drawable.max);
                     break;
             }
-            tvResultado.setText("Resultado: " + resultadoCalculado); // [cite: 14]
+            tvResultado.setText("Resultado: " + resultadoCalculado);
 
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Ingresa números válidos", Toast.LENGTH_SHORT).show();
